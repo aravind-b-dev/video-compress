@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:video_compres/video_player.dart';
 import 'package:video_compress/video_compress.dart';
 
 void main() {
@@ -32,6 +33,7 @@ class _VdoCompressState extends State<VdoCompress> {
   late Subscription _subscription;
   var progres = 0.0;
 
+  var videoFile;
   @override
   void initState() {
     super.initState();
@@ -74,16 +76,22 @@ class _VdoCompressState extends State<VdoCompress> {
                 },
                 child: const Text("Pick video")),
 
-            SizedBox(height: 25,),
+            const SizedBox(height: 25,),
             ElevatedButton(
                 onPressed: () {
                   vdoCompress();
                 },
                 child: const Text("Compress")),
 
-            SizedBox(height: 25,),
+            const SizedBox(height: 25,),
 
             Text("Progress : $progres",textAlign: TextAlign.center,),
+
+            SizedBox(height:20),
+
+            videoFile == null ? Container() :
+            VideoPlay(video :videoFile ),
+
           ],
         ),
       ),
@@ -96,6 +104,15 @@ class _VdoCompressState extends State<VdoCompress> {
       quality: VideoQuality.LowQuality,
       deleteOrigin: false, // It's false by default
     );
-    print("----------$mediaInfo");
+    print("----------${mediaInfo!.path}");
+
+
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        videoFile = mediaInfo.path.toString();
+      });
+
+    });
+
   }
 }
