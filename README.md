@@ -15,6 +15,15 @@ Demo video
 
 https://user-images.githubusercontent.com/73890321/145079374-87b74384-d367-42f7-9ae6-e9feec434699.mp4
 
+
+Permissions
+- uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+- uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+- uses-permission android:name="android.permission.INTERNET" 
+
+
+Change the  compileSdkVersion to 31
+
 ## Getting Started
 
 
