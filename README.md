@@ -1,10 +1,15 @@
 # video_compres
 
-Pick video from local storage and compress
+Pick video from local storage and compress then played it
 
 - Pick video from local Storage
 - compress the video
 - play the compressed video from compressed video folder
+
+dependencies:
+-  video_compress: ^3.1.0
+-  file_picker: ^4.0.2
+-  better_player: ^0.0.72
 
 Demo video
 
