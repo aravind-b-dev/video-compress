@@ -46,19 +46,29 @@ class _VideoPlayState extends State<VideoPlay> {
     _betterPlayerController = BetterPlayerController(betterPlayerConfiguration);
     _betterPlayerController.setupDataSource(_betterPlayerDataSource);
     super.initState();
-
   }
+
+  @override
+  dispose(){
+    _betterPlayerController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Container(
-          color: Colors.black,
-          height :200,
-          width : 400,
-          child: BetterPlayerMultipleGestureDetector(
-            child: AspectRatio(
-              aspectRatio: 9 / 15,
-              child: BetterPlayer(
-                controller: _betterPlayerController,
+      padding : const EdgeInsets.symmetric(horizontal: 10),
+          height: MediaQuery.of(context).size.height*.25,
+          width: MediaQuery.of(context).size.width,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(20),
+            ),
+            child: BetterPlayerMultipleGestureDetector(
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: BetterPlayer(
+                  controller: _betterPlayerController,
+                ),
               ),
             ),
           ),
