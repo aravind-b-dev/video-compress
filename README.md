@@ -2,6 +2,14 @@
 
 Pick video from local storage and compress
 
+- Pick video from local Storage
+- compress the video
+- play the compressed video from compressed video folder
+
+Demo video
+
+https://user-images.githubusercontent.com/73890321/145079374-87b74384-d367-42f7-9ae6-e9feec434699.mp4
+
 ## Getting Started
 
 
